@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--8 bit unicode; inclut tous les languages du monde-->
+        <meta charset="UTF-8">
+        <!--Titre de la page-->
+        <title>DNA to RNA translator</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    </head>
+    <body>
+        <img src="https://i.imgur.com/y4etwfh.jpg">
+        <!-- "br" pour creer un saut de ligne entre l'image et le contenu-->
+        <br>
+        <!-- ou on veut stocker l'information-->
+        <!-- "post" pour envoyer de l'information au server et non en "get"-->
+        <form action="translate" method="post">
+            <!-- creer paragraphe-->
+            <p>Enter your DNA sequence</p>
+            <br>
+            <!-- recevoir l'information de l'usager (son input)-->
+            <!-- input [type="du text? du ...? du...?"] name="l'identifiant"-->
+            <!-- input n'on pas besoin de close les tags-->
+            <input type="text" name="dnaSeq">
+            <br>
+            <!-- pour creer un BOUTTON dans un FORM, on n'utiliser pas "button", on utilise input type="submit"-->
+            <!-- on n'utilise pas de name; on utilise "value" et "id"-->
+            <input type="submit" value="Translate" id="trans">
+            <br>
+            <!-- Rendre le text ajustable avec; permet de communiquer avec Python-->
+            <!-- For loop ou l'on veut mettre le message-->
+            {% for message in get_flashed_messages() %}
+                <p> {{message}} </p>
+            <!-- End la for loop -->
+            {% endfor %}
+        </form>
+    </body>
+</html>
