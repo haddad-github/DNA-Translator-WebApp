@@ -1,7 +1,11 @@
 body{
 
-    background-color: slategray;
+    /*background-color: slategray;*/
 
+    background-image: url("https://i.imgur.com/zDMosZm.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: slategray;
     text-align: center;
 
 }
@@ -9,7 +13,6 @@ body{
 /*paragraph*/
 p{
     color: white;
-    font: Shanti;
     font-size: 1.2em;
     margin: 20px;
 }
@@ -32,7 +35,7 @@ input{
     font-size: 1.3em;
 }
 
-input: focus{
+input:focus{
     border: solid 5px #00FFCE;
     outline: none;
 }
@@ -47,6 +50,7 @@ input: focus{
 
 /*rendre le boutton interactif*/
 #trans:hover {
+    box-shadow: 2px 5px 5px 0 rebeccapurple;
     background-color: mediumvioletred;
     cursor: pointer;
 }
