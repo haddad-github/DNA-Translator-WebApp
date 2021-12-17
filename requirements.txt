@@ -92,7 +92,6 @@ prometheus-client==0.10.1
 prompt-toolkit==3.0.18
 proto-plus==1.19.0
 protobuf==3.17.3
-py2exe==0.10.4.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 PyAutoGUI==0.9.52
