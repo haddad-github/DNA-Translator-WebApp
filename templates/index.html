@@ -27,10 +27,15 @@
             <br>
             <!-- Rendre le text ajustable avec; permet de communiquer avec Python-->
             <!-- For loop ou l'on veut mettre le message-->
-            {% for message in get_flashed_messages() %}
-                <p> {{message}} </p>
+            <!--{% for message in get_flashed_messages() %}-->
+                <!--<p> {{message}} </p>-->
             <!-- End la for loop -->
-            {% endfor %}
+            <!--{% endfor %}-->
+            <p>mRNA Sequence</p>
+            <input type="text" name="rnaSeq" readonly value={{rna}}>
+            <br>
+            <p>Protein sequence</p>
+            <input type="text" name="protSeq" readonly value={{prot}}>
         </form>
     </body>
 </html>
