@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, flash
 
 #Initialiser l'application; creer classe pour notre application
 app = Flask(__name__)
-app.secret_key = "bruh"
+app.secret_key = "###"
 
 #Represente la derniere partie du URL (ex: /page1 , /stats, /store3, etc.)
 #Doit associer cette route avec une fonction
