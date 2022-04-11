@@ -35,11 +35,14 @@ def getProtein(seq):
 
     protein = []
 
-    for i in range(0, len(seq), 3):
-        codon = seq[i:i + 3]
+    try:
+        for i in range(0, len(seq), 3):
+            codon = seq[i:i + 3]
 
-        if len(codon) == 3:
-            protein += proteinDict[codon]
+            if len(codon) == 3:
+                protein += proteinDict[codon]
+    except:
+        pass
 
     final_protein = "".join(protein)
 
@@ -64,7 +67,8 @@ def translate():
     
     for letter in dnaSequence:
         if letter not in dict:
-            pass
+            rnaSequence = "ATGC-Only."
+            break
         else:
             rnaSequence += dict[letter]
 
