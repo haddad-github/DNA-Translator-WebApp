@@ -1,17 +1,18 @@
 from flask import Flask, render_template, request, flash
 
-#Initialiser l'application; creer classe pour notre application
+#Initialize
 app = Flask(__name__)
 app.secret_key = "###"
 
-#Represente la derniere partie du URL (ex: /page1 , /stats, /store3, etc.)
-#Doit associer cette route avec une fonction
+#url/route
+#returns html template
 @app.route("/translate")
 def index():
     #Flash un message; liee aux % message % de index.html
     flash("RNA seq")
     return render_template("index.html")
 
+#Translate to protein using dictionary from universal codon table
 def getProtein(seq):
 
     proteinDict = {
@@ -48,14 +49,13 @@ def getProtein(seq):
 
     return final_protein
 
-###CODE PYTHON###
+#Placeholder for eventual dropdown menu for ORF options
 #@app.route("/translate", methods=["POST", "GET"])
 #def dropdown():
- #   orfs = [1,2,3]
-    
+ #   orfs = [1,2,3] 
   #  return render_template('index.html', orfs=orfs)
 
-##CODE PYTHON##
+#Translates user's DNA input (ATGC) to RNA
 @app.route("/translate", methods=["POST", "GET"])
 def translate():
 
@@ -72,10 +72,8 @@ def translate():
         else:
             rnaSequence += dict[letter]
 
-    #flash = print
-    #flash(rnaSequence)
 
     protSeq = getProtein(dnaSequence)
 
-    #Faut toujours return le template pareil au index
+    #Return template with html
     return render_template("index.html", rna = rnaSequence, prot = protSeq)
